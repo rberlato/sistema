@@ -1,26 +1,19 @@
 <?php
-
 require_once '../../bd/conexao.php';
-
 //-------------------------------------//
-
 $nomeEmpresa =  trim($_POST['nomeEmpresa']);
 $cnpj =         trim($_POST['cnpj']);
 $inscEst =      trim($_POST['inscEst']);
-
 $endereco =     trim($_POST['endereco']);
 $numero =       trim($_POST['numero']);
 $complemento =  trim($_POST['complemento']);
-
 $bairro =       trim($_POST['bairro']);
 $cidade =       trim($_POST['cidade']);
 $estado =       trim($_POST['estado']);
 $cep =          trim($_POST['cep']);
-
 $emailEmpresa = trim($_POST['emailEmpresa']);
-$telefone =      trim($_POST['telcomercial']);
-$celEmpresa =      trim($_POST['celEmpresa']);
-
+$telefone =     trim($_POST['telcomercial']);
+$celEmpresa =   trim($_POST['celEmpresa']);
 $responsavel =  trim($_POST['nomeResponsavel']);
 $rg =           trim($_POST['rg']);
 $emailResp =    trim($_POST['emailResponsavel']);
