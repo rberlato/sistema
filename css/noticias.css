@@ -1,0 +1,31 @@
+body{
+    background-color: #323232;
+}
+
+.container-rss{
+    padding: 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-left: 25%;
+    margin-right: 25%;
+
+}
+
+
+
+@media screen and (max-width: 999px) {
+    .container-rss{
+        padding: 5px;
+    
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+    
+        margin-left: 1px;
+        margin-right: 1px;
+    
+    }
+  }

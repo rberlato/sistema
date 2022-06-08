@@ -1,0 +1,43 @@
+.card{
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.2;
+}
+
+
+.card-body h3{
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+}
+  
+#login{
+  width: 450px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(36, 34, 34, 0.3);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 20px 20px rgba(0,0,0,0.8); 
+  border-radius: 8px;
+}
+
+.form-group label{
+  font-family: Arial, sans-serif;
+  
+  font-weight: bold;
+  color: rgba(7, 0, 0, 0.664);
+  font-size: 1rem;
+}
+
+footer{
+  margin-top: 90vh;
+  background-color: #fff;
+  color:#000;
+}
