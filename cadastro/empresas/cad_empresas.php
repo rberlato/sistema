@@ -1,3 +1,9 @@
+<?php
+include 'conexão.php';
+session_start();
+include 'menu.php';
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -7,12 +13,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Empresas</title>
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/cad_empresas.css">
+    <link rel="stylesheet" href="../../css/menu.css">
 </head>
 
 
 <body>
-
     <?php include 'campo_pesquisa.php'; ?>
 
     <div class="container">
