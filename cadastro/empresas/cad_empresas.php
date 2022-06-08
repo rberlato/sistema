@@ -13,22 +13,7 @@
 
 <body>
 
-    <div class="container mt-5">
-        <form method="get" name="busca" action="pesquisa.php">
-            <div class="form-row">
-                <div class="form-group col-md-11">
-                    <input type="text" name="busca" class="form-control" id="busca" aria-describedby="busca" placeholder="Pesquise aqui sobre o cadastro de Uma Empresa" required>
-
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md">
-                        <button type="submit" name="pesquisar" value="pesquisar" class="btn btn-primary">Pesquisar</button>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <hr class="my-4">
-    </div>
+    <?php include 'campo_pesquisa.php'; ?>
 
     <div class="container">
         <div class="jumbotron">
@@ -40,7 +25,7 @@
 
     <div class="container mb-3">
 
-        <form method="post" name="empresa" action="add_empresa.php">
+        <form method="post" name="empresa" action="cadastrar.php">
             <div class="jumbotron ">
                 <div class="container-fluid cad_empresas">
                     <h5>Dados para Cadastro:</h5><br>

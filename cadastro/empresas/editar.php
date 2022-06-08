@@ -42,22 +42,7 @@ while ($i = mysqli_fetch_array($result)) {
 
 <body>
     <!-- Pesquisa Empresa -->
-    <div class="container mt-5">
-        <form method="get" name="busca" action="pesquisa.php">
-            <div class="form-row">
-                <div class="form-group col-md-11">
-                    <input type="text" name="busca" class="form-control" id="busca" aria-describedby="busca" placeholder="Para Editar o cadastro da empresa, Pesquise-a pelo nome" required>
-
-                </div>
-                <div class="form-row">
-                    <div class="form-group col-md">
-                        <button type="submit" name="pesquisar" value="pesquisar" class="btn btn-primary">Pesquisar</button>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <hr class="my-4">
-    </div>
+    <?php include 'campo_pesquisa.php'; ?>
 
     <!-- Editar Empresa -->
     <div class="container">
@@ -79,38 +64,46 @@ while ($i = mysqli_fetch_array($result)) {
                     <div class="form-row">
 
                         <div>
-                            <input type="hidden" name="id" class="form-control" id="id" aria-describedby="id" required value="<?php echo $id ?>">
+                            <input type="hidden" name="id" class="form-control" id="id" 
+                            aria-describedby="id" required value="<?php echo $id ?>">
                         </div>
 
                         <div class="col">
                             <label for="cnpj">CNPJ</label>
-                            <input type="text" name="cnpj" maxlength="15" class="form-control" id="cnpj" aria-describedby="cnpj" placeholder="CNPJ valido" required value="<?php echo $cnpj ?>">
+                            <input type="text" name="cnpj" maxlength="15" class="form-control" id="cnpj" 
+                            aria-describedby="cnpj" placeholder="CNPJ valido" required value="<?php echo $cnpj ?>">
                         </div>
                         <div class="col">
                             <label for="inscEst">Inscrição Estadual</label>
-                            <input type="text" name="inscEst" class="form-control" id="inscEst" aria-describedby="inscEst" placeholder="Inscrição Estadual" required value="<?php echo $inscEst ?>">
+                            <input type="text" name="inscEst" class="form-control" id="inscEst" 
+                            aria-describedby="inscEst" placeholder="Inscrição Estadual" required value="<?php echo $inscEst ?>">
                         </div>
                     </div><br>
                     <div class="form-row">
                         <div class="form-group col-md-9">
                             <label for="endereco">Endereço</label>
-                            <input type="text" name="endereco" class="form-control" id="endereco" aria-describedby="endereco" placeholder="Rua da Felicidade, Nº 45" required value="<?php echo $endereco ?>">
+                            <input type="text" name="endereco" class="form-control" id="endereco" 
+                            aria-describedby="endereco" placeholder="Rua da Felicidade, Nº 45" required value="<?php echo $endereco ?>">
                         </div>
                         <div class="form-group col-md-1">
                             <label for="numero">Numero</label>
-                            <input type="text" name="numero" class="form-control" id="numero" aria-describedby="numero" placeholder="Nº" required value="<?php echo $numero ?>">
+                            <input type="text" name="numero" class="form-control" id="numero" 
+                            aria-describedby="numero" placeholder="Nº" required value="<?php echo $numero ?>">
                         </div>
                         <div class="form-group col-md-2">
                             <label for="complemento">Complemento</label>
-                            <input type="text" name="complemento" class="form-control" id="complemento" aria-describedby="complemento" placeholder="Complemento" required value="<?php echo $complemento ?>">
+                            <input type="text" name="complemento" class="form-control" id="complemento" 
+                            aria-describedby="complemento" placeholder="Complemento" required value="<?php echo $complemento ?>">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="bairro">Bairro</label>
-                            <input type="text" name="bairro" class="form-control" id="bairro" aria-describedby="bairro" placeholder="Bairro" required value="<?php echo $bairro ?>">
+                            <input type="text" name="bairro" class="form-control" id="bairro" 
+                            aria-describedby="bairro" placeholder="Bairro" required value="<?php echo $bairro ?>">
                         </div><br>
                         <div class="form-group col-md-4">
                             <label for="cidade">Cidade</label>
-                            <input type="text" name="cidade" class="form-control" id="cidade" aria-describedby="cidade" placeholder="Cidade" requiredvalue="<?php echo $cidade ?>">
+                            <input type="text" name="cidade" class="form-control" id="cidade" 
+                            aria-describedby="cidade" placeholder="Cidade" required value="<?php echo $cidade ?>">
                         </div>
 
 
@@ -140,7 +133,7 @@ while ($i = mysqli_fetch_array($result)) {
                                 <option>Rondônia</option>
                                 <option>Roraima</option>
                                 <option>Santa Catarina</option>
-                                <option selected>São Paulo</option>
+                                <option>São Paulo</option>
                                 <option>Sergipe</option>
                                 <option>Tocantins</option>
                                 <option>Ceará</option>
@@ -149,19 +142,23 @@ while ($i = mysqli_fetch_array($result)) {
 
                         <div class="form-group col-md-2">
                             <label for="cep">CEP</label>
-                            <input type="text" name="cep" class="form-control" id="cep" aria-describedby="cep" placeholder="Digite um CEP" required value="<?php echo $cep ?>">
+                            <input type="text" name="cep" class="form-control" id="cep" 
+                            aria-describedby="cep" placeholder="Digite um CEP" required value="<?php echo $cep ?>">
                         </div>
                         <div class="form-group col-md-8">
                             <label for="emailEmpresa">Email</label>
-                            <input type="text" name="emailEmpresa" class="form-control" id="emailEmpresa" aria-describedby="emailEmpresa" placeholder="Email" required value="<?php echo $emailEmpresa ?>">
+                            <input type="text" name="emailEmpresa" class="form-control" id="emailEmpresa" 
+                            aria-describedby="emailEmpresa" placeholder="Email" required value="<?php echo $emailEmpresa ?>">
                         </div>
                         <div class="form-group col-md-2">
                             <label for="telcomercial">Tel</label>
-                            <input type="text" name="telcomercial" class="form-control" id="telcomercial" aria-describedby="telcomercial" placeholder="Telefone comercial" required value="<?php echo $telefone ?>">
+                            <input type="text" name="telcomercial" class="form-control" id="telcomercial" 
+                            aria-describedby="telcomercial" placeholder="Telefone comercial" required value="<?php echo $telefone ?>">
                         </div>
                         <div class="form-group col-md-2">
                             <label for="celEmpresa">Cel</label>
-                            <input type="text" name="celEmpresa" class="form-control" id="celEmpresa" aria-describedby="celEmpresa" placeholder="Celular/Fax" required value="<?php echo $celEmpresa ?>">
+                            <input type="text" name="celEmpresa" class="form-control" id="celEmpresa" 
+                            aria-describedby="celEmpresa" placeholder="Celular/Fax" required value="<?php echo $celEmpresa ?>">
                         </div>
                     </div>
                     <hr>
@@ -169,19 +166,23 @@ while ($i = mysqli_fetch_array($result)) {
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="nomeResponsavel">Nome Completo</label>
-                            <input type="text" name="nomeResponsavel" class="form-control" id="nomeResponsavel" aria-describedby="nomeResponsavel" placeholder="Nome Completo" required value="<?php echo $responsavel ?>">
+                            <input type="text" name="nomeResponsavel" class="form-control" id="nomeResponsavel" 
+                            aria-describedby="nomeResponsavel" placeholder="Nome Completo" required value="<?php echo $responsavel ?>">
                         </div>
                         <div class="form-group col-md-3">
                             <label for="rg">Documento de Identidade</label>
-                            <input type="text" name="rg" class="form-control" id="rg" aria-describedby="rg" placeholder="RG" required value="<?php echo $rg ?>">
+                            <input type="text" name="rg" class="form-control" id="rg" aria-describedby="rg" 
+                            placeholder="RG" required value="<?php echo $rg ?>">
                         </div>
                         <div class="form-group col-md-3">
                             <label for="emailResponsavel">Email</label>
-                            <input type="text" name="emailResponsavel" class="form-control" id="emailResponsavel" aria-describedby="emailResponsavel" placeholder="Email do Responsavel" required value="<?php echo $emailResp ?>">
+                            <input type="text" name="emailResponsavel" class="form-control" id="emailResponsavel" 
+                            aria-describedby="emailResponsavel" placeholder="Email do Responsavel" required value="<?php echo $emailResp ?>">
                         </div>
                         <div class="form-group col-md-2">
                             <label for="celResponsavel">Celular</label>
-                            <input type="text" name="celResponsavel" class="form-control" id="celResponsavel" aria-describedby="celResponsavel" placeholder="Celular" required value="<?php echo $celResponsavel ?>">
+                            <input type="text" name="celResponsavel" class="form-control" id="celResponsavel" 
+                            aria-describedby="celResponsavel" placeholder="Celular" maxlength="15" required value="<?php echo $celResponsavel ?>">
                         </div>
                     </div><br>
 

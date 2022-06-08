@@ -37,15 +37,8 @@
                 <a class="btn btn-light" href="http://192.168.0.111/sistema/cadastro/empresas/cad_empresas.php">Voltar</a>
             </div><hr>';
         }
-
-
-
-
-
         ?>
     </div>
-
-
 </body>
 
 </html>
