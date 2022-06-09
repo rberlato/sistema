@@ -1,7 +1,3 @@
-<?php
-include './menu.php';
-
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -12,12 +8,19 @@ include './menu.php';
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/geral.css" />
-   
+    <link rel="stylesheet" href="css/menu.css">
+
+    
     <title>Feed de Noticias - TecMundo</title>
 </head>
 
-<body class="container bg">
+<header class="container-fluid">
+    <?php include 'menu.php'; ?>
+
+</header>
+
+<body class="container" >
+    <br><br><br>
     <?php
     include './app/Feed/TecMundo.php';
 
@@ -47,7 +50,8 @@ include './menu.php';
 
             //LAYOUT DO CARD
             $items .= '
-                        <br><br><div class="card">
+                        <br><br style="padding-top: 150px;">
+                        <div class="card pt-5">
                             <div class="card-image">
                                 <figure>
                                     <img src="' . $image . '" class="card-img-top" alt="' . $item->title . '">
@@ -62,7 +66,7 @@ include './menu.php';
                                 </div>
 
                                 <div class="content">' . $item->description . '<br>
-                                    <time>Data de atualização:'.$lastUpdate.' </time>
+                                    <time>Data de atualização:' . $lastUpdate . ' </time>
                                 </div>
                             </div>
                         </div>';
@@ -83,7 +87,7 @@ include './menu.php';
 
         <div>
             <a href="./painel.php"></a>
-            
+
             <?= $items ?>
         </div>
 

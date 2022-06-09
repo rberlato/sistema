@@ -1,6 +1,6 @@
 <?php
 include_once('verifica_login.php');
-include './menu.php';
+include 'menu.php';
 include './app/Feed/TecMundo.php';
 ?>
 
@@ -13,8 +13,8 @@ include './app/Feed/TecMundo.php';
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bulma.min.css" />
-    <link rel="stylesheet" href="css/bulma.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/menu.css" />
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <link rel="stylesheet" type="text/css" href="css/rss.css">
 

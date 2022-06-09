@@ -14,9 +14,6 @@
 <body>
     <header class="fixed-top">
         <nav>
-            <span>
-                <a href="../../painel.php" style="text-transform: uppercase; color: #fff;"> <?= $_SESSION['nome'] ?></a>
-            </span>
 
             <div class="mobile-menu">
                 <div class="line1"></div>
@@ -25,7 +22,7 @@
             </div>
 
             <ul class="nav-list">
-                <li><a href="../sistema/noticias.php">Noticias Tec Mundo</a></li>
+                <li><a href="../../rss/">Rss Tec Mundo</a></li>
                 <li><a href="../noticias.php">Noticias Tec Mundo</a></li>
                 <li><a href="../noticias.php">Noticias Tec Mundo</a></li>
 
@@ -38,13 +35,15 @@
             </ul>
 
             <div class="d-flex">
-                <a href="./logout.php" class="btn btn-danger" role="button">Sair</a>
+                <a href="../../logout.php" class="btn btn-danger" role="button">Sair</a>
             </div>
 
         </nav>
     </header>
-    <main></main>
-    <script src="./js/mobile-navbar.js"></script>
+
+    <br><br>
+
+    <script src="../../js/mobile-navbar.js"></script>
 </body>
 
 </html>

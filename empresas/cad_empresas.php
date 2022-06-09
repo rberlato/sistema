@@ -1,9 +1,3 @@
-<?php
-include 'conexão.php';
-session_start();
-include 'menu.php';
-
-?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -16,9 +10,14 @@ include 'menu.php';
     <link rel="stylesheet" href="../../css/menu.css">
 </head>
 
+<header class="container-fluid">
+    <?php require_once('menu.php') ?>
+</header>
 
 <body>
-    <?php include 'campo_pesquisa.php'; ?>
+    <?php
+    include 'campo_pesquisa.php';
+    ?>
 
     <div class="container">
         <div class="jumbotron">
@@ -26,7 +25,6 @@ include 'menu.php';
             <p class="lead">Para realizar o cadastro da Sua empresa, tenha em mãos os dados necessários.</p>
         </div>
     </div>
-
 
     <div class="container mb-3">
 

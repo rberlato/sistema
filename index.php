@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -22,11 +21,8 @@
             <p>Ainda não tem cadastro ? Cadastre-se aqui</p><a class="btn btn-primary" href="http://192.168.0.111/sistema/tela-login.php">Para entrar</a>
 
             <div>
-<<<<<<< HEAD
-                <?php
-=======
->>>>>>> 2862eabc5406161f8351c68be56a5f5aad6ca05d
 
+                <?php
                 ?>
             </div>
         </div>
