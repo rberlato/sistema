@@ -34,8 +34,6 @@ include_once('verifica_login.php');
                 <li><a href="http://192.168.0.111/sistema/rss/NoticiasG1.php">Noticias G1 Empregos</a></li>
                 <li><a href="http://192.168.0.111/sistema/empresas/cad_empresas.php">Empresas</a></li>
                 <li><a href="http://192.168.0.111/sistema/empresas/index.php" >Lista de Empresas </a></li>
-                
-                <li><a href="http://192.168.0.111/sistema/comentarios/coments.php">Comentarios</a></li>
             </ul>
 
             <div class="d-flex">
