@@ -30,7 +30,6 @@ include_once('verifica_login.php');
             <ul class="nav-list">
                 <li><a href="../../rss/">Rss Tec Mundo</a></li>
                 <li><a href="../noticias.php">Noticias Tec Mundo</a></li>
-                <li><a href="../noticias.php">Noticias Tec Mundo</a></li>
 
                 <li><a href="http://192.168.0.111/sistema/rss/NoticiasG1.php">Noticias G1 Empregos</a></li>
                 <li><a href="http://192.168.0.111/sistema/empresas/cad_empresas.php">Empresas</a></li>
