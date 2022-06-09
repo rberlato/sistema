@@ -1,24 +1,18 @@
 <?php 
-
 //DEPENDENCIAS
 use \App\Feed\TecMundo;
-
 //INSTANCIA DO FEED
 $obFeed = new TecMundo;
-
 //DATA DE ATUALIZAÇÃO
 $lastUpdate = date('d/m/Y à\s H:i:s', strtotime($obFeed->getLastUpdate()));
-
 //VARIAVEL CONTENDO OS DADOS DO LAYOUT DO ITENS DO FEED
 $items = '';
-
 //ITERA TODAS AS POSIÇÕES DOS ITENS NO FEED
 foreach($obFeed->getItems() as $item ){
     //IMAGEM DO ITEM
     $image = $item->enclosure->attributes()->url;
-
     //LAYOUT DO CARD
-    $items .= '<div class="col">
+    $items .= '<div class="col-md-3">
                 <div class="card text-dark h-100">
                     <div class="card-body">
                     <div class="card-header bg-primary">'.$item->category.'</div>
@@ -34,18 +28,15 @@ foreach($obFeed->getItems() as $item ){
 
 <div class="text-center">
 
-    <img src="<?=$obFeed->getLogo()?>" alt="" class="mb-3">
-    <div class="nav"></div>
-    <a href="../../sistema/painel.php" type="submit" class="btn btn-light">Voltar</a>
-    <h1 class="mb-0"><?=$obFeed->getTitle()?></h1>
-    <p class="mb-0"><?=$obFeed->getDescription()?></p>
-    <p class="text-muted mb-4"><?=$lastUpdate?></p>
+    <!-- <img src="<?=$obFeed->getLogo()?>" alt="" class="mb-3"> -->
+
+    <!-- <h1 class="mb-0"><?=$obFeed->getTitle()?></h1> -->
+    <!-- <p class="mb-0"><?=$obFeed->getDescription()?></p> -->
+    <!-- <p class="text-muted mb-4"><?=$lastUpdate?></p> -->
 
 </div>
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
-    <?=$items?> 
-    <?=$items?> 
     <?=$items?> 
 </div>
 

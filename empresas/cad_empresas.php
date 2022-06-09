@@ -1,3 +1,7 @@
+<?php
+include 'conexao.php';
+include 'verifica_login.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -6,8 +10,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Empresas</title>
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/menu.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/menu.css">
 </head>
 
 <header class="container-fluid">
@@ -68,8 +72,8 @@
                         </div>
                         <div class="form-group col-md-2">
                             <label for="estado">Estado</label>
-                            <select id="estado" class="form-control">
-                                <option>Acre</option>
+                            <select id="estado" class="form-control form-select" aria-label="Default select example">
+                                <option selected>Acre</option>
                                 <option>Alagoas</option>
                                 <option>Amapá</option>
                                 <option>Bahia</option>
@@ -140,13 +144,15 @@
                     <div class="row">
                         <div class="col">
                             <!-- <input type="submit" name="salvar" value="Cadastrar"> -->
-                            <button type="submit" name="salvar" value="Cadastrar" class="btn btn-primary">Salvar Cadastro</button>
+                            <button type="submit" name="salvar" value="cadastrar" class="btn btn-primary">Salvar Cadastro</button>
                         </div>
                     </div>
                 </div>
             </div>
         </form>
     </div>
+
+
 
 </body>
 

@@ -13,4 +13,4 @@
 </head>
 
 <body class="bg-dark text-light">
-  <div class="container p-5">
+  <div class="p-5">

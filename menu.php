@@ -18,9 +18,7 @@ include_once('./verifica_login.php');
 <body>
     <header class="fixed-top">
         <nav>
-            <span >
                 <a href="./painel.php" style="text-transform: uppercase; color: #fff;"> <?= $_SESSION['nome'] ?></a>
-            </span>
 
             <div class="mobile-menu">
                 <div class="line1"></div>
@@ -31,8 +29,8 @@ include_once('./verifica_login.php');
             <ul class="nav-list">
                 <li><a href="../sistema/rss/index.php">Rss Tec Mundo</a></li>
                 <li><a href="noticias.php">Noticias Tec Mundo</a></li>
-                <li><a href="http://192.168.0.111/sistema/rss/NoticiasG1.php">Noticias G1 Empregos</a></li>
-                <li><a href="http://192.168.0.111/sistema/cadastro/empresas/cad_empresas.php">Empresas</a></li>
+                <li><a href="rss.php">Noticias G1 Empregos</a></li>
+                <li><a href="http://192.168.0.111/sistema/empresas/cad_empresas.php">Empresas</a></li>
                 <li><a href="#">Sobre</a></li>
                 <li><a href="#">Projetos</a></li>
                 <li><a href="#">Contato</a></li>

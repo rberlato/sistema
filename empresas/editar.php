@@ -1,5 +1,5 @@
 <?php
-include_once '../../bd/conexao.php';
+include_once 'conexao.php';
 $id = $_GET['id'];
 mysqli_set_charset($conexao, "utf8");
 $sql = "SELECT * FROM empresas WHERE  id = '$id' LIMIT 1";
@@ -34,8 +34,8 @@ while ($i = mysqli_fetch_array($result)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Empresas</title>
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/cad_empresas.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/cad_empresas.css">
     <!-- <link rel="stylesheet" href="../../css/geral.css"> -->
 </head>
 
@@ -189,7 +189,7 @@ while ($i = mysqli_fetch_array($result)) {
                     <div class="row">
                         <div class="col">
                             <!-- <input type="submit" name="salvar" value="Cadastrar"> -->
-                            <a class="btn btn-secondary" href="http://192.168.0.111/sistema/cadastro/empresas/cad_empresas.php">Cadastrar Nova Empresa</a>
+                            <a class="btn btn-secondary" href="http://192.168.0.111/sistema/empresas/cad_empresas.php">Cadastrar Nova Empresa</a>
                             <button type="submit" name="salvar" value="Cadastrar" class="btn btn-warning">Atualizar</button>
                         </div>
                     </div>

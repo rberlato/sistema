@@ -12,22 +12,26 @@
 
 </head>
 
-<body class="container bg">
-    <img class="image-index" src="./image/work_tree.jpeg" alt="">
-    <section class="container">
-        <div>
-            <h3>Teste Teste</h3>
-            <p>Para saber mais entre ou
-            <p>Ainda não tem cadastro ? Cadastre-se aqui</p><a class="btn btn-primary" href="http://192.168.0.111/sistema/tela-login.php">Para entrar</a>
+<header>
+    <?php
+    require 'conexao.php';
+    ?>
 
-            <div>
+</header>
 
-                <?php
-                ?>
+<body class="container">
+    <div class="jumbotron">
+        <img class="image-index pb-5" src="./image/work_two.jpeg" alt="">
+        <section class="pb-5">
+            <div class="pb-5">
+                <h3 class="pb-5">Teste Teste</h3>
+                <p>Para saber mais entre ou
+                <p>Ainda não tem cadastro ? Cadastre-se aqui</p><a class="btn btn-primary" href="http://192.168.0.111/sistema/tela-login.php">Para entrar</a>
+                <h2 class="pt-5">Realize seu login para prosseguir</h2>
+
             </div>
-        </div>
 
-    </section>
+        </section>
 </body>
 
 </html>
