@@ -30,98 +30,78 @@ include 'verifica_login.php';
         </div>
     </div>
 
-    <div class="container mb-3">
-
+    <div class="container">
         <form method="post" name="empresa" action="cadastrar.php">
+
             <div class="jumbotron ">
-                <div class="container-fluid cad_empresas">
-                    <h5>Dados para Cadastro:</h5><br>
-                    <label for="nomeEmpresa">Nome / Razão Social da Empresa</label>
-                    <input type="text" name="nomeEmpresa" class="form-control" id="nome" aria-describedby="nomeEmpresa" placeholder="Nome Empresa" required>
-                    <br>
+                <div class="">
+                    <h5 class="pb-5">Dados para Cadastro:</h5>
+
                     <div class="form-row">
-                        <div class="col">
+                        <div class="form-group col-md-12">
+                            <label for="nomeEmpresa">Nome / Razão Social da Empresa</label>
+                            <input type="text" name="nomeEmpresa" class="form-control" id="nome" aria-describedby="nomeEmpresa" placeholder="Nome Empresa" required>
+                        </div>
+
+                        <div class="form-group col-md-7">
                             <label for="cnpj">CNPJ</label>
                             <input type="text" name="cnpj" maxlength="15" class="form-control" id="cnpj" aria-describedby="cnpj" placeholder="CNPJ valido" required>
                         </div>
-                        <div class="col">
+                        <div class="form-group col-md-5">
                             <label for="inscEst">Inscrição Estadual</label>
                             <input type="text" name="inscEst" class="form-control" id="inscEst" aria-describedby="inscEst" placeholder="Inscrição Estadual" required>
                         </div>
-                    </div><br>
+                    </div>
+
                     <div class="form-row">
-                        <div class="form-group col-md-9">
-                            <label for="endereco">Endereço</label>
-                            <input type="text" name="endereco" class="form-control" id="endereco" aria-describedby="endereco" placeholder="Rua da Felicidade, Nº 45" required>
+                        <div class="form-group col-md-2">
+                            <label for="cep">CEP:</label>
+                            <input type="text" id="Cep" name="cep" class="form-control" aria-describedby="Cep" placeholder="Digite um CEP" required>
+                        </div>
+                        <div class="form-group col-md-7">
+                            <label for="rua">Rua</label>
+                            <input type="text" id="Rua" name="rua" class="form-control" aria-describedby="Rua" placeholder="Rua da Felicidade" required>
                         </div>
                         <div class="form-group col-md-1">
                             <label for="numero">Numero</label>
-                            <input type="text" name="numero" class="form-control" id="numero" aria-describedby="numero" placeholder="Nº" required>
+                            <input type="text" id="Numero" name="numero" class="form-control" aria-describedby="numero" placeholder="Nº" required>
                         </div>
                         <div class="form-group col-md-2">
                             <label for="complemento">Complemento</label>
-                            <input type="text" name="complemento" class="form-control" id="complemento" aria-describedby="complemento" placeholder="Complemento" required>
+                            <input type="text" id="Complemento" name="complemento" class="form-control" aria-describedby="Complemento" placeholder="Complemento" required>
                         </div>
-                        <div class="form-group col-md-4">
+
+                        <div class="form-group col-md-6">
                             <label for="bairro">Bairro</label>
-                            <input type="text" name="bairro" class="form-control" id="bairro" aria-describedby="bairro" placeholder="Bairro" required>
+                            <input type="text" id="Bairro" name="bairro" class="form-control" aria-describedby="Bairro" placeholder="Bairro" required>
                         </div><br>
                         <div class="form-group col-md-4">
-                            <label for="cidade">Cidade</label>
-                            <input type="text" name="cidade" class="form-control" id="cidade" aria-describedby="cidade" placeholder="Cidade" required>
+                            <label for="cidade">Cidade:</label>
+                            <input type="text" id="Cidade" name="cidade" class="form-control" aria-describedby="Cidade" placeholder="Cidade" required>
                         </div>
                         <div class="form-group col-md-2">
                             <label for="estado">Estado</label>
-                            <select id="estado" class="form-control form-select" aria-label="Default select example">
-                                <option selected>Acre</option>
-                                <option>Alagoas</option>
-                                <option>Amapá</option>
-                                <option>Bahia</option>
-                                <option>Amazonas</option>
-                                <option>Distrito Federal</option>
-                                <option>Espírito Santo</option>
-                                <option>Goiás</option>
-                                <option>Maranhão</option>
-                                <option>Mato Grosso</option>
-                                <option>Mato Grosso do Sul</option>
-                                <option>Minas Gerais</option>
-                                <option>Pará</option>
-                                <option>Paraíba</option>
-                                <option>Paraná</option>
-                                <option>Pernambuco</option>
-                                <option>Piauí</option>
-                                <option>Rio de Janeiro</option>
-                                <option>Rio Grande do Norte</option>
-                                <option>Rio Grande do Sul</option>
-                                <option>Rondônia</option>
-                                <option>Roraima</option>
-                                <option>Santa Catarina</option>
-                                <option selected>São Paulo</option>
-                                <option>Sergipe</option>
-                                <option>Tocantins</option>
-                                <option>Ceará</option>
-                            </select>
+                            <input type="text" id="Estado" name="estado" class="form-control" aria-describedby="Estado" placeholder="Estado" required>
                         </div>
-                        <div class="form-group col-md-2">
-                            <label for="cep">CEP</label>
-                            <input type="text" name="cep" class="form-control" id="cep" aria-describedby="cep" placeholder="Digite um CEP" required>
-                        </div>
+                    </div>
+
+                    <div class="form-row">
                         <div class="form-group col-md-8">
-                            <label for="emailEmpresa">Email</label>
-                            <input type="text" name="emailEmpresa" class="form-control" id="emailEmpresa" aria-describedby="emailEmpresa" placeholder="Email" required>
+                            <label for="emailcomercial">Email</label>
+                            <input type="text" name="emailcomercial" class="form-control" aria-describedby="emailcomercial" placeholder="Email" required>
                         </div>
                         <div class="form-group col-md-2">
                             <label for="telcomercial">Tel</label>
-                            <input type="text" name="telcomercial" class="form-control" id="telcomercial" aria-describedby="telcomercial" placeholder="Telefone comercial" required>
+                            <input type="text" name="telcomercial" class="form-control" aria-describedby="telcomercial" placeholder="Telefone comercial" required>
                         </div>
                         <div class="form-group col-md-2">
-                            <label for="celEmpresa">Cel</label>
-                            <input type="text" name="celEmpresa" class="form-control" id="celEmpresa" aria-describedby="celEmpresa" placeholder="Celular/Fax" required>
-                        </div>
+                            <label for="celcomercial">Cel</label>
+                            <input type="text" name="celcomercial" class="form-control" aria-describedby="celcomercial" placeholder="Celular/Fax" required>
+                        </div>                        
                     </div>
-                    <hr>
 
-                    <h5>Contatos do Profissional Responsavel</h5><br>
+                    <hr><h5 class="pb-5">Contatos do Profissional Responsavel</h5>
+
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="nomeResponsavel">Nome Completo</label>
@@ -139,14 +119,16 @@ include 'verifica_login.php';
                             <label for="celResponsavel">Celular</label>
                             <input type="text" name="celResponsavel" class="form-control" id="celResponsavel" aria-describedby="celResponsavel" placeholder="Celular" required>
                         </div>
-                    </div><br>
+                    </div>
 
                     <div class="row">
                         <div class="col">
-                            <!-- <input type="submit" name="salvar" value="Cadastrar"> -->
                             <button type="submit" name="salvar" value="cadastrar" class="btn btn-primary">Salvar Cadastro</button>
                         </div>
                     </div>
+
+                    <script src="../js/jquery.js"></script>
+                    <script src="../js/cep.js"></script>
                 </div>
             </div>
         </form>

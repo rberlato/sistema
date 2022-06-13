@@ -3,11 +3,11 @@ include_once('conexao.php');
 include_once('menu.php');
 
 // print_r($_SESSION);
-if ((isset($_SESSION['usuario']) == true) and (isset($_SESSION['senha']) == true)) {
-    unset($_SESSION['usuario']);
-    unset($_SESSION['senha']);
-    header('Location: login.php');
-}
+// if ((isset($_SESSION['usuario']) == true) and (isset($_SESSION['senha']) == true)) {
+//     unset($_SESSION['usuario']);
+//     unset($_SESSION['senha']);
+//     header('Location: login.php');
+// }
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +33,7 @@ if ((isset($_SESSION['usuario']) == true) and (isset($_SESSION['senha']) == true
                 <tr>
                     <th scope="col">id</th>
                     <th scope="col">Nome</th>
+                    <th scope="col">Telefone</th>
                     <th scope="col">Celular</th>
                     <th scope="col">CNPJ</th>
                     <th scope="col">Opções</th>
@@ -49,7 +50,8 @@ if ((isset($_SESSION['usuario']) == true) and (isset($_SESSION['senha']) == true
                     <tr>
                         <th scope="row">' . $i['id'] . '</th>
                         <th>' . $i['nomeEmpresa'] . '</th>
-                        <th>' . $i['celEmpresa'] . '</th>
+                        <th>' . $i['telComercial'] . '</th>
+                        <th>' . $i['celComercial'] . '</th>
                         <th>' . $i['cnpj'] . '</th>
                         <th><a href="excluir.php?id=' . $i['id'] . '" onclick="return deletar();"><img src="../image/trash.svg" alt=""></a></th>
                         <th><a href="editar.php?id=' . $i['id'] . '"><img src="../image/pencil.svg" alt=""></a></th>
