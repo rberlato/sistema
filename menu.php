@@ -1,5 +1,5 @@
 <?php
-include_once('conexao.php');
+include_once('bd/conexao.php');
 include_once('./verifica_login.php');
 ?>
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ include_once('./verifica_login.php');
 <body>
     <header class="fixed-top">
         <nav>
-                <a href="./painel.php" style="text-transform: uppercase; color: #fff;"> <?= $_SESSION['nome'] ?></a>
+            <a href="http://192.168.0.111/sistema/painel.php" style="text-transform: uppercase; color: #fff;"> <?= $_SESSION['nome'] ?></a>
 
             <div class="mobile-menu">
                 <div class="line1"></div>
@@ -27,13 +27,8 @@ include_once('./verifica_login.php');
             </div>
 
             <ul class="nav-list">
-                <li><a href="../sistema/rss/index.php">Rss Tec Mundo</a></li>
-                <li><a href="noticias.php">Noticias Tec Mundo</a></li>
-                <li><a href="rss.php">Noticias G1 Empregos</a></li>
-                <li><a href="http://192.168.0.111/sistema/empresas/cad_empresas.php">Empresas</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Projetos</a></li>
-                <li><a href="#">Contato</a></li>
+                <li><a href="http://192.168.0.111/sistema/empresas/index.php">Empresas</a></li>
+                <li><a href="http://192.168.0.111/sistema/vagas/index.php">Vagas</a></li>
                 <li><a href="http://192.168.0.111/sistema/comentarios/coments.php">Comentarios</a></li>
             </ul>
 

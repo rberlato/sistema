@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Empresas</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/menu.css">
 </head>
 
 
@@ -22,12 +23,12 @@
         require_once 'conexao.php';
 
         $pesquisar = $_GET['busca'];
-        $sql = "SELECT * FROM empresas where nomeResponsavel or nomeEmpresa like '%$pesquisar%'  ";
+        $sql = "SELECT * FROM vagas where titulo or descricao like '%$pesquisar%'  ";
         $row = mysqli_query($conexao, $sql);
 
         while ($result = mysqli_fetch_assoc($row)) {
-            echo '<strong>Empresa: </strong>'. $resulPesquisa = $result['nomeEmpresa'];
-            echo ' <strong>Responsavel: </strong>  ' . $resulPesquisa = $result['nomeResponsavel'];
+            echo '<strong>Vaga: </strong>'. $resulPesquisa = $result['titulo'];
+            echo ' <strong>Responsavel: </strong>  ' . $resulPesquisa = $result['descricao'];
             echo '
             <div class="container jumbotron">
             <a class="btn btn-success" href="cad_empresas.php?id=' . $result['id'] . '">Cadastrar Novo</a>

@@ -1,5 +1,5 @@
 <?php
-include 'conexao.php';
+include '../conexao.php';
 include 'verifica_login.php';
 ?>
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ include 'verifica_login.php';
 </head>
 
 <header class="container-fluid">
-    <?php require_once('menu.php') ?>
+    <?php require_once('../menu.php') ?>
 </header>
 
 <body>
@@ -25,7 +25,7 @@ include 'verifica_login.php';
 
     <div class="container">
         <div class="jumbotron">
-            <h4 class="display-4">Cadastro de Empresas</h4>
+        <h4 class="display-4" style="text-transform: uppercase; font-family: Arial;">Cadastro de Empresas</h4>
             <p class="lead">Para realizar o cadastro da Sua empresa, tenha em mãos os dados necessários.</p>
         </div>
     </div>
@@ -35,7 +35,7 @@ include 'verifica_login.php';
 
             <div class="jumbotron ">
                 <div class="">
-                    <h5 class="pb-5">Dados para Cadastro:</h5>
+                    <h5 class="pb-5" style="text-transform: uppercase; font-family: Arial;">Dados para Cadastro:</h5>
 
                     <div class="form-row">
                         <div class="form-group col-md-12">
@@ -100,7 +100,7 @@ include 'verifica_login.php';
                         </div>                        
                     </div>
 
-                    <hr><h5 class="pb-5">Contatos do Profissional Responsavel</h5>
+                    <hr><h5 class="pb-5" style="text-transform: uppercase; font-family: Arial;">Contatos do Profissional Responsavel</h5>
 
                     <div class="form-row">
                         <div class="form-group col-md-4">

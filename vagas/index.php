@@ -5,53 +5,63 @@ include_once('../menu.php');
 
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Login - Rafael Berlato </title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/menu.css">
-</head>
-
-
-<body>
-    <div class="container">
-        <div class="" style="padding: 55px 0;">
-            <h1>Empresas Cadastradas
-                <a class="btn btn-success" href="cad_empresas.php">Cadastrar Nova Empresa</a>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sistema de Login - Rafael Berlato </title>
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/menu.css">
+    </head>
+    
+    
+    <body>
+        <div class="container">
+            <div class="" style="padding: 55px 0;">
+            <h1>Vagas Cadastradas
+                <a class="btn btn-success" href="cadastrarVagas.php">Nova Vaga</a>
             </h1>
+
         </div>
     </div>
+
+    <?php include 'campo_pesquisa.php' ?>
+    
     <div class="container-fluid">
         <table class="table table-striped table-hover">
-            <thead>
-                <tr class="text-center">
-                    <th scope="col">Codigo Empresa</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">CNPJ</th>
-                    <th scope="col">Telefone</th>
-                    <th scope="col">Celular</th>
+            <thead class="text-center">
+                <tr>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Criador</th>
+                    <th scope="col">Descricao</th>
+                    <th scope="col">Empresa</th>
+                    <th scope="col">Data de cadastro</th>
+                    <th scope="col">Status</th>
                     <th scope="col">Opções</th>
                 </tr>
             </thead>
-
+            
             <?php
-            $sql = "SELECT * FROM empresas";
+            $sql = "SELECT * FROM vagas";
             $result = mysqli_query($conexao, $sql);
 
             while ($i = mysqli_fetch_assoc($result)) {
                 echo '
-                <tbody>
-                    <tr class="text-center">
+                <tbody class="text-center">
+                <tr>
                         <th scope="row">' . $i['id'] . '</th>
-                        <th>' . $i['nomeEmpresa'] . '</th>
-                        <th>' . $i['cnpj'] . '</th>
-                        <th>' . $i['telComercial'] . '</th>
-                        <th>' . $i['celComercial'] . '</th>
-                        <th><a class="btn btn-danger" href="excluir.php?id=' . $i['id'] . '" onclick="return deletar();">Excluir</a> 
-                            <a class="btn btn-warning" href="editar.php?id=' . $i['id'] . '">Editar</a></th>
+                        <th>' . $i['titulo'] . '</th>
+                        <th>' . $i['criador'] . '</th>
+                        <th>' . $i['descricao'] . '</th>
+                        <th>' . $i['empresa'] . '</th>
+                        <th>' . $i['dataCadastro'] . '</th>
+                        <th>' . $i['statusVaga'] . '</th>                        
+                        <th>
+                        <a class="btn btn-warning" href="editar.php?id=' . $i['id'] . '">Editar</a>
+                        <a class="btn btn-danger" href="excluir.php?id=' . $i['id'] . '" onclick="return deletar();">Excluir</a>
+                        </th>
                     </tr>
                 </tbody>
 

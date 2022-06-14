@@ -1,43 +1,62 @@
-.bg{
+.bg {
     background: url('../image/work_two.jpeg')no-repeat center center;
     background-size: cover;
     height: 100vh;
 }
 
+.blur {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 20px 20px rgba(0, 1, 2, 3, .8);
+}
+
+.center {
+    width: 600px;
+    display: block;
+    justify-content:space-between;
+    align-items: flex-start;
+
+    padding-top: 10vh;
+
+    margin-left: 600px;
+    margin-right: 600px;
+
+    position: absolute;
+    top:0px;
+    left:0px;
+}
 
 
-.container{
+
+.container {
     height: 100%;
     display: block;
     justify-content: center;
     align-items: center;
     text-align: center;
     padding: 10px 0;
-    background-color: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(3px);
-    box-shadow: 0 20px 20px rgba(0,1,2,3, .8);
     border-radius: 8px;
 }
 
-.noticias{
+.noticias {
     display: flex;
     justify-content: space-around;
 }
 
-.image-index{
+.image-index {
     width: 100%;
     height: 300px;
     object-fit: cover;
     object-position: center;
 }
 
-.cards-index{
+.cards-index {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.card-img-top{
+.card-img-top {
     width: 250px;
     height: auto;
     padding: 10px;

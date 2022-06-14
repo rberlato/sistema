@@ -55,7 +55,7 @@ while ($i = mysqli_fetch_array($result)) {
     <!-- Editar Empresa -->
     <div class="container">
         <div class="jumbotron">
-            <h4 class="display-4">Atualização do Cadastro de Empresas</h4>
+        <h4 class="display-4" style="text-transform: uppercase; font-family: Arial;">Atualização do Cadastro de Empresas</h4>
             <p class="lead">Para realizar a atualização no cadastro da Sua empresa, Preencha diretamente os campos necessários.</p>
         </div>
     </div>
@@ -66,7 +66,7 @@ while ($i = mysqli_fetch_array($result)) {
 
              <div class="jumbotron ">
                 <div class="">
-                    <h5 class="pb-5">Dados para Cadastro:</h5>
+                <h5 class="pb-5" style="text-transform: uppercase; font-family: Arial;">Dados para Cadastro:</h5>
 
                     <div class="form-row">
                         <div class="form-group col-md-12">
@@ -131,11 +131,11 @@ while ($i = mysqli_fetch_array($result)) {
                         </div>
                         <div class="form-group col-md-2">
                             <label for="celcomercial">Cel</label>
-                            <input type="text" name="celcomercial" class="form-control" aria-describedby="celcomercial" placeholder="Celular/Fax"  value="<?php echo $telefoneComercial ?>">
+                            <input type="text" name="celcomercial" class="form-control" aria-describedby="celcomercial" placeholder="Celular/Fax"  value="<?php echo $celularComercial ?>">
                         </div>                        
                     </div>
 
-                    <hr><h5 class="pb-5">Contatos do Profissional Responsavel</h5>
+                    <hr><h5 class="pb-5" style="text-transform: uppercase; font-family: Arial;">Contatos do Profissional Responsavel</h5>
 
                     <div class="form-row">
                         <div class="form-group col-md-4">
