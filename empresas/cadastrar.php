@@ -1,27 +1,23 @@
 <?php
-require_once 'conexao.php';
+require_once '../bd/conexao.php';
 //-------------------------------------//
-$nomeEmpresa =  trim($_POST['nomeEmpresa']);
-$cnpj =         trim($_POST['cnpj']);
-$inscEst =      trim($_POST['inscEst']);
-
-$cep =          trim($_POST['cep']);
-$rua =          trim($_POST['rua']);
-$numero =       trim($_POST['numero']);
-$complemento =  trim($_POST['complemento']);
-
-$bairro =       trim($_POST['bairro']);
-$cidade =       trim($_POST['cidade']);
-$estado =       trim($_POST['estado']);
-
+$nomeEmpresa =    trim($_POST['nomeEmpresa']);
+$cnpj =           trim($_POST['cnpj']);
+$inscEst =        trim($_POST['inscEst']);
+$cep =            trim($_POST['cep']);
+$rua =            trim($_POST['rua']);
+$numero =         trim($_POST['numero']);
+$complemento =    trim($_POST['complemento']);
+$bairro =         trim($_POST['bairro']);
+$cidade =         trim($_POST['cidade']);
+$estado =         trim($_POST['estado']);
 $emailComercial = trim($_POST['emailComercial']);
-$telefoneComercial =     trim($_POST['telComercial']);
-$celularComercial =   trim($_POST['celComercial']);
-
-$responsavel =  trim($_POST['nomeResponsavel']);
-$rg =           trim($_POST['rg']);
-$emailResp =    trim($_POST['emailResponsavel']);
-$celResponsavel =   trim($_POST['celResponsavel']);
+$telComercial =   trim($_POST['telComercial']);
+$celComercial =   trim($_POST['celComercial']);
+$responsavel =    trim($_POST['nomeResponsavel']);
+$rg =             trim($_POST['rg']);
+$emailResp =      trim($_POST['emailResponsavel']);
+$celResponsavel = trim($_POST['celResponsavel']);
 
 $sql = "INSERT INTO empresas (nomeEmpresa, cnpj, inscEst, 
                     cep, rua, numero, complemento, 
@@ -32,7 +28,7 @@ $sql = "INSERT INTO empresas (nomeEmpresa, cnpj, inscEst,
                     VALUES ('$nomeEmpresa','$cnpj','$inscEst',
                     '$cep','$rua','$numero','$complemento',
                     '$bairro','$cidade','$estado', 
-                    '$emailComercial','$telefoneComercial','$celularComercial',
+                    '$emailComercial','$telComercial','$celComercial',
                     '$responsavel','$rg','$emailResp','$celResponsavel')";
 
 if(mysqli_query($conexao, $sql)){

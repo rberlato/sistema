@@ -1,6 +1,16 @@
 <?php
 include_once('bd/conexao.php');
-include_once('./verifica_login.php');
+
+// verifica se o usuário é administrador, caso sim, exibi os botões para excluir e editar
+$consulta_user = "SELECT * FROM usuarios";
+$result = mysqli_query($conexao, $consulta_user);
+$dados = mysqli_fetch_array($result);
+
+$nome = $dados['nome'];
+$email = $dados['email'];
+$adm = $dados['adm'];
+$user = '';
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,7 +19,7 @@ include_once('./verifica_login.php');
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Navbar</title>
+    <title>Navbar  <?= $_SESSION['nome'] ?></title>
     <link rel="stylesheet" href="./css/bootstrap.css" />
     <link rel="stylesheet" href="./css/menu.css" />
 </head>
@@ -29,11 +39,12 @@ include_once('./verifica_login.php');
             <ul class="nav-list">
                 <li><a href="http://192.168.0.111/sistema/empresas/index.php">Empresas</a></li>
                 <li><a href="http://192.168.0.111/sistema/vagas/index.php">Vagas</a></li>
+
                 <li><a href="http://192.168.0.111/sistema/comentarios/coments.php">Comentarios</a></li>
             </ul>
 
             <div class="d-flex">
-                <a href="./logout.php" class="btn btn-danger" role="button">Sair</a>
+                <a href="http://192.168.0.111/sistema/logout.php" class="btn btn-danger btn-sm" role="button">Sair</a>
             </div>
 
         </nav>

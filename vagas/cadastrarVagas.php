@@ -1,7 +1,8 @@
 <?php
-include '../conexao.php';
-// include 'verifica_login.php';
+include '../bd/conexao.php';
+include_once('../menuBootstrap.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -10,34 +11,27 @@ include '../conexao.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Empresas</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
-<header>
-    <?php require_once('../menu.php') ?>
-</header>
 
 
 
-<body class="p-5">
-    <div class="container ">
+
+<body>
+    <div class="container" style="padding-top: 8vh;">
         <div class="jumbotron ">
-            <h4 class="display-4" style="text-transform: uppercase; font-family: Arial;">Cadastro de De vagas</h4>
+            <h4 class="display-4 text-center" style="text-transform: uppercase; font-family: Arial;">Cadastro de De vagas</h4>
             <p class="lead">Para cadastrar uma vaga, vc precisar ser uma Empresa cadastrada ! <br>Caso não tenha sua empresa cadastrada,
-                clique aqui para realizar o cadastro da Sua empresa</p>
-            <h5 class="text-muted">Tenha em mãos os dados necessários.</h5>
+                clique <a href="http://192.168.0.111/sistema/empresas/cad_empresas.php">aqui</a> para realizar o cadastro da Sua empresa</p>
+            <h5 class="text-muted text-center">Tenha em mãos os dados necessários.</h5>
         </div>
     </div>
-
-
-
-
 
     <div class="container">
         <form method="post" name="titulo" action="cadastrar.php">
             <div class="jumbotron ">
-                <div class="">
-                    <h5 class="pb-5" style="text-transform: uppercase; font-family: Arial;">Dados para Cadastro:</h5>
+                <div class="pt-5">
+                    <h5 style="text-transform: uppercase; font-family: Arial;">Dados para Cadastro:</h5>
 
                     <div class="form-row">
                         <div class="form-group col-md-12">

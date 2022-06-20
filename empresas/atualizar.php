@@ -1,5 +1,5 @@
 <?php
-require_once 'conexao.php';
+require_once '../bd/conexao.php';
 //-------------------------------------//
 $id =                   trim($_POST['id']);
 
@@ -16,8 +16,8 @@ $cidade =               trim($_POST['cidade']);
 $estado =               trim($_POST['estado']); 
 
 $emailComercial =       trim($_POST['emailComercial']);
-$telefoneComercial =    trim($_POST['telComercial']);
-$celularComercial =     trim($_POST['celComercial']);
+$telComercial =         trim($_POST['telComercial']);
+$celComercial =         trim($_POST['celComercial']);
 
 $responsavel =          trim($_POST['nomeResponsavel']);
 $rg =                   trim($_POST['rg']);
@@ -27,7 +27,7 @@ $celResponsavel =       trim($_POST['celResponsavel']);
 
 $sql = "UPDATE empresas SET nomeEmpresa='$nomeEmpresa', cnpj='$cnpj', inscEst='$inscEst', cep='$cep', rua='$rua', numero='$numero', complemento='$complemento', 
                             bairro='$bairro', cidade='$cidade', estado='$estado', 
-                            emailComercial='$emailComercial', telcomercial='$telefoneComercial', celComercial='$celcelComercial', 
+                            emailComercial='$emailComercial', telcomercial='$telComercial', celComercial='$celComercial', 
                             nomeResponsavel='$responsavel', rg='$rg', emailResponsavel='$emailResp', celResponsavel='$celResponsavel' WHERE id='$id'";
 
 if(mysqli_query($conexao, $sql)){

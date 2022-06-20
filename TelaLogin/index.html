@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="signup">
+            <div class="logo">
+                <h1 class="signup__title">Cadastre-se</h1>
+                <form action="" class="form">
+
+                    <div class="form__group" for="inputName">
+                        <label class="form__label">Nome</label>
+                        <input type="text" name="nome" class="form__input-text" id="inputName" placeholder="Nome">
+                    </div>
+
+                    <div class="form__group" for="inputEmail">
+                        <label class="form__label">E-mail</label>
+                        <input type="email" name="email" class="form__input-text" id="inputEmail" placeholder="E-mail">
+                    </div>
+
+                    <div class="form__group" for="inputPassword">
+                        <label class="form__label">Senha</label>
+                        <input type="password" name="password" class="form__input-text" id="inputPassword"
+                            placeholder="Senha">
+                        <div class="requiriments">
+                            <div class="requiriments__descripition">A senha deverá ter:</div>
+                            <ul class="requirements__list">
+                                <li class="requirements__item">Pelo menos uma letra maiúscula</li>
+                                <li class="requirements__item">Pelo menos uma letra minúscula</li>
+                                <li class="requirements__item">Pelo menos um Número</li>
+                                <li class="requirements__item">Pelo menos 1 caracter especial</li>
+                                <li class="requirements__item">Pelo menos 8 Caracteres</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="form__group" for="inputName">
+                        <input type="checkbox" name="terms" class="form__input-checkbox" id="inputTerms">
+                        <label class="form__label" for="inputTerms">Concordo com os termos e política de
+                            privacidade</label>
+                    </div>
+
+                    <div class="form__group" for="inputEmail">
+                        <button class="form__button-submit" type="submit">Enviar</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

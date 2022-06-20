@@ -22,7 +22,7 @@
   display: block;
   justify-content: center;
   align-items: center;
-  background-color: rgba(36, 34, 34, 0.3);
+  background-color: rgba(36, 34, 34, 0.525);
   backdrop-filter: blur(3px);
   box-shadow: 0 20px 20px rgba(0,0,0,0.8); 
   border-radius: 8px;

@@ -1,6 +1,6 @@
 <?php
-include '../conexao.php';
-include 'verifica_login.php';
+include '../bd/conexao.php';
+include '../menuBootstrap.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -11,31 +11,22 @@ include 'verifica_login.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Empresas</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/menu.css">
 </head>
 
-<header class="container-fluid">
-    <?php require_once('../menu.php') ?>
-</header>
-
 <body>
-    <?php
-    include 'campo_pesquisa.php';
-    ?>
-
-    <div class="container">
+<div class="container text-center" style="padding-top: 8vh;">
         <div class="jumbotron">
         <h4 class="display-4" style="text-transform: uppercase; font-family: Arial;">Cadastro de Empresas</h4>
             <p class="lead">Para realizar o cadastro da Sua empresa, tenha em mãos os dados necessários.</p>
         </div>
     </div>
 
-    <div class="container">
+    <div class="container  mb-3">
         <form method="post" name="empresa" action="cadastrar.php">
 
             <div class="jumbotron ">
-                <div class="">
-                    <h5 class="pb-5" style="text-transform: uppercase; font-family: Arial;">Dados para Cadastro:</h5>
+            <div class="pt-5">
+                    <h5 style="text-transform: uppercase; font-family: Arial;">Dados para Cadastro:</h5>
 
                     <div class="form-row">
                         <div class="form-group col-md-12">
@@ -88,15 +79,15 @@ include 'verifica_login.php';
                     <div class="form-row">
                         <div class="form-group col-md-8">
                             <label for="emailcomercial">Email</label>
-                            <input type="text" name="emailcomercial" class="form-control" aria-describedby="emailcomercial" placeholder="Email" required>
+                            <input type="text" name="emailComercial" class="form-control" aria-describedby="emailcomercial" placeholder="Email" required>
                         </div>
                         <div class="form-group col-md-2">
                             <label for="telcomercial">Tel</label>
-                            <input type="text" name="telcomercial" class="form-control" aria-describedby="telcomercial" placeholder="Telefone comercial" required>
+                            <input type="text" name="telComercial" class="form-control" aria-describedby="telcomercial" placeholder="Telefone comercial" required>
                         </div>
                         <div class="form-group col-md-2">
                             <label for="celcomercial">Cel</label>
-                            <input type="text" name="celcomercial" class="form-control" aria-describedby="celcomercial" placeholder="Celular/Fax" required>
+                            <input type="text" name="celComercial" class="form-control" aria-describedby="celcomercial" placeholder="Celular/Fax" required>
                         </div>                        
                     </div>
 
@@ -133,9 +124,6 @@ include 'verifica_login.php';
             </div>
         </form>
     </div>
-
-
-
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 <?php
 session_start();
 session_destroy();
-header('Location: tela-login.php');
+echo "<script>window.location = 'http://192.168.0.111/sistema/'</script>";
 exit();

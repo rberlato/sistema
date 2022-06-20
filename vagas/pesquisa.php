@@ -12,13 +12,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Empresas</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/geral.css">
     <link rel="stylesheet" href="../css/menu.css">
 </head>
 
 
 <body>
 
-    <div class="container">
+    <div class="center jumbotron ">
         <?php
         require_once 'conexao.php';
 
@@ -30,12 +31,12 @@
             echo '<strong>Vaga: </strong>'. $resulPesquisa = $result['titulo'];
             echo ' <strong>Responsavel: </strong>  ' . $resulPesquisa = $result['descricao'];
             echo '
-            <div class="container jumbotron">
-            <a class="btn btn-success" href="cad_empresas.php?id=' . $result['id'] . '">Cadastrar Novo</a>
+            <div class="container">
+            <a class="btn btn-success" href="cadastrarVagas.php?id=' . $result['id'] . '">Cadastrar Novo</a>
                 <a class="btn btn-danger" href="excluir.php?id=' . $result['id'] . '">Excluir</a>  
                 <a class="btn btn-warning" href="editar.php?id=' . $result['id'] . '">Editar</a>
-                <a class="btn btn-light" href="http://192.168.0.111/sistema/cadastro/empresas/cad_empresas.php">Voltar</a>
-            </div><hr>';
+                <a class="btn btn-light" href="http://192.168.0.111/sistema/vagas/">Voltar</a>
+            </div>';
         }
         ?>
     </div>

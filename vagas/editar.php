@@ -1,20 +1,21 @@
 <?php
+include_once '../bd/conexao.php';
+include_once('../menuBootstrap.php');
 
-include_once 'conexao.php';
 
 $id = $_GET['id'];
 mysqli_set_charset($conexao, "utf8");
 
-$sql = "SELECT * FROM empresas WHERE  id = '$id' LIMIT 1";
+$sql = "SELECT * FROM vagas WHERE  id = '$id' LIMIT 1";
 $result = mysqli_query($conexao, $sql);
 
 while ($i = mysqli_fetch_array($result)) {
-    $id =                   trim($i['id']);
+    $id =           trim($i['id']);
 
-    $titulo =       trim($_POST['titulo']);
-    $criador =      trim($_POST['criador']);
-    $empresa =      trim($_POST['empresa']);
-    $descricao =    trim($_POST['descricao']);
+    $titulo =       trim($i['titulo']);
+    $criador =      trim($i['criador']);
+    $empresa =      trim($i['empresa']);
+    $descricao =    trim($i['descricao']);
 }
 ?>
 
@@ -27,48 +28,41 @@ while ($i = mysqli_fetch_array($result)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Empresas</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/menu.css">
-    <!-- <link rel="stylesheet" href="../../css/geral.css"> -->
 </head>
 
 
-<body class="p-5">
-    <?php include_once('../menu.php')?>
-    <div class="container ">
+<body class="bg bg-dark">
+    <div class="container text-center" style="padding-top: 8vh;">
         <div class="jumbotron ">
             <h4 class="display-4" style="text-transform: uppercase; font-family: Arial;">Edição das vagas</h4>
             <h5 class="text-muted">Tenha em mãos os dados necessários.</h5>
         </div>
     </div>
 
-
-
-
-
     <div class="container">
-        <form method="post" name="titulo" action="cadastrar.php">
+        <form method="post" name="titulo" action="atualizar.php">
             <div class="jumbotron ">
-                <div class="">
-                    <h5 class="pb-5" style="text-transform: uppercase; font-family: Arial;">Dados para Cadastro:</h5>
+                <div>
+                    <h5 style="text-transform: uppercase; font-family: Arial;">Dados para Cadastro:</h5>
 
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="titulo">Titulo da Vaga</label>
-                            <input type="text" name="titulo" class="form-control" id="titulo" aria-describedby="titulo" placeholder="Titulo da Vaga" required>
+                            <input type="text" name="titulo" class="form-control" id="titulo" aria-describedby="titulo" placeholder="Titulo da Vaga" required value="<?php echo $titulo ?>">
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="criador">Criador</label>
-                            <input type="text" name="criador" maxlength="15" class="form-control" id="criador" aria-describedby="criador" placeholder="criador" required>
+                            <input type="text" name="criador" maxlength="15" class="form-control" id="criador" aria-describedby="criador" placeholder="criador" required value="<?php echo $criador ?>">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="empresa">Empresa</label>
-                            <input type="text" name="empresa" class="form-control" id="empresa" aria-describedby="empresa" placeholder="Empresa" required>
+                            <input type="text" name="empresa" class="form-control" id="empresa" aria-describedby="empresa" placeholder="Empresa" required value="<?php echo $empresa ?>">
                         </div>
 
                         <div class="form-group col-md-12">
                             <label for="descricao">Descrição da Vaga:</label>
-                            <textarea class="form-control" name="descricao" id="descricao" rows="5"></textarea>
+                            <textarea class="form-control" name="descricao" id="descricao" rows="5"><?php echo $descricao ?></textarea>
                         </div>
 
                         <div class="form-check">
@@ -82,7 +76,7 @@ while ($i = mysqli_fetch_array($result)) {
                         </div>
 
                         <div class="form-group col-md-12 pt-5">
-                            <button type="submit" name="salvar" value="cadastrar" class="btn btn-primary">Cadastrar Vaga</button>
+                            <button type="submit" name="salvar" value="cadastrar" class="btn btn-primary">Atualizar Vaga</button>
                         </div>
 
 

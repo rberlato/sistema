@@ -1,6 +1,12 @@
 <?php
+session_start();
+
 include_once('../bd/conexao.php');
-include_once('../menu.php');
+include_once('../menuBootstrap.php');
+
+// Realiza a consulta das empresas
+$consulta_empresas = "SELECT * FROM empresas";
+$result = mysqli_query($conexao, $consulta_empresas);
 ?>
 
 <!DOCTYPE html>
@@ -12,97 +18,73 @@ include_once('../menu.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Login - Rafael Berlato </title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/menu.css">
 </head>
 
-
 <body>
-    <div class="container">
-        <div class="" style="padding: 55px 0;">
+    <div class="container text-center" style="padding-top: 8vh;">
+        <div>
             <h1>Empresas Cadastradas
-                <a class="btn btn-success" href="cad_empresas.php">Cadastrar Nova Empresa</a>
+                <a class="btn btn-success btn-sm" href="cad_empresas.php">Nova Empresa</a>
             </h1>
         </div>
     </div>
-    <div class="container-fluid">
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr class="text-center">
+
+    <div class="">
+        <table class="table container-fluid text-center">
+            <thead class="table-dark ">
+                <tr class="table-striped">
                     <th scope="col">Codigo Empresa</th>
                     <th scope="col">Nome</th>
                     <th scope="col">CNPJ</th>
                     <th scope="col">Telefone</th>
                     <th scope="col">Celular</th>
+                    <th scope="col">Celular do responsavel</th>
                     <th scope="col">Opções</th>
                 </tr>
             </thead>
 
             <?php
-            $sql = "SELECT * FROM empresas";
-            $result = mysqli_query($conexao, $sql);
-
-            while ($i = mysqli_fetch_assoc($result)) {
-                echo '
-                <tbody>
-                    <tr class="text-center">
-                        <th scope="row">' . $i['id'] . '</th>
-                        <th>' . $i['nomeEmpresa'] . '</th>
-                        <th>' . $i['cnpj'] . '</th>
-                        <th>' . $i['telComercial'] . '</th>
-                        <th>' . $i['celComercial'] . '</th>
-                        <th><a class="btn btn-danger" href="excluir.php?id=' . $i['id'] . '" onclick="return deletar();">Excluir</a> 
-                            <a class="btn btn-warning" href="editar.php?id=' . $i['id'] . '">Editar</a></th>
+            if ($_SESSION['nome'] == $nome) {
+                $user =  $adm;
+                echo $_SESSION['nome'] . ' com previlegios de administrador';
+                while ($i = mysqli_fetch_array($result)) {
+                    echo '
+                    <tbody>
+                        <tr class="text-center">
+                                <th scope="row">' . $i['id'] . '</th>
+                                <th>' . $i['nomeEmpresa'] . '</th>
+                                <th>' . $i['cnpj'] . '</th>
+                                <th>' . $i['telComercial'] . '</th>
+                                <th>' . $i['celComercial'] . '</th>
+                                <th>' . $i['celResponsavel'] . '</th>
+                                <th><a class="btn btn-warning btn-sm" href="editar.php?id=' . $i['id'] . '">Editar</a>
+                                <a class="btn btn-danger btn-sm" href="excluir.php?id=' . $i['id'] . '" onclick="return deletar();">Excluir</a>    
+                            </th>
+                        </tr>
+                    </tbody>
+                        ';
+                }
+            } else {
+                echo $_SESSION['nome'] . ' Não tem previlegios de administrador';
+                while ($i = mysqli_fetch_array($result)) {
+                    echo '
+                    <tbody>
+                        <tr class="text-center">
+                            <th scope="row">' . $i['id'] . '</th>
+                            <th>' . $i['nomeEmpresa'] . '</th>
+                            <th>' . $i['cnpj'] . '</th>
+                            <th>' . $i['telComercial'] . '</th>
+                            <th>' . $i['celComercial'] . '</th>
+                            <th>' . $i['celResponsavel'] . '</th>
+                            <th><a class="btn btn-warning btn-sm" href="editar.php?id=' . $i['id'] . '">Editar</a>                               
+                        </th>
                     </tr>
-                </tbody>
-
-                ';
+                    </tbody>';
+                }
             }
             ?>
-
         </table>
-
     </div>
-
-
-    <!-- 
-    <div class="container">
-        <h1 class="mt-5">Usuários Cadastrados</h1>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Usuário</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Opções</th>
-                </tr>
-            </thead>
-
-            <?php
-            $sql = "SELECT * FROM usuarios";
-            $result = mysqli_query($conexao, $sql);
-
-            while ($i = mysqli_fetch_assoc($result)) {
-                echo '
-                <tbody>
-                    <tr>
-                        <th scope="row">' . $i['id'] . '</th>
-                        <th>' . $i['nome'] . '</th>
-                        <th>' . $i['email'] . '</th>
-                        <th>' . $i['usuario'] . '</th>
-                        <th><a href="excluir.php?id=' . $i['id'] . '" onclick="return deletar();"><i class="bi bi-trash"></i>Deletar</a></th>
-                    </tr>
-                </tbody>
-
-                ';
-            }
-            ?>
-
-        </table>
-
-    </div> -->
-
-
 </body>
 
 <script src="../js/menu.js"></script>

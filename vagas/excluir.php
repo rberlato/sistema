@@ -1,5 +1,5 @@
 <?php
-require_once 'conexao.php';
+require_once '../bd/conexao.php';
 session_start();
 ?>
 
@@ -17,7 +17,6 @@ session_start();
 
 
 <body>
-
     <div class="container">
         <?php
         
@@ -30,8 +29,6 @@ session_start();
         }
         ?>
     </div>
-
-
 </body>
 
 </html>

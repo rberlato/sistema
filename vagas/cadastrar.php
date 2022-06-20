@@ -13,7 +13,7 @@ $sql = "INSERT INTO vagas (titulo, criador, empresa, descricao)
                     '$descricao')";
 
 if(mysqli_query($conexao, $sql)){
-    header("Location: cadastrarVagas.php");
+    header("Location: index.php");
 }else{
     echo "Erro: " .$sql. "<br>" . mysqli_error($conexao);
 }

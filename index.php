@@ -13,27 +13,30 @@
 </head>
 
 <header>
-    <?php    require 'conexao.php';    ?>
+    <?php require 'bd/conexao.php';    ?>
 </header>
 
 <body class="container">
-    <div class="row g-5">
-        <div class="col-md-12">
-            <img class="image-index pb-5" src="./image/work_two.jpeg" alt="">
+    <div class="row g-5 bgcard">        
+        <div class="col-md-12 blur">
             <section class="pb-5">
-                <div class="pb-5">
+                <div class="pb-5 d-grid gap-2">
                     <h3 class="pb-5">Teste Teste</h3>
                     <p>Para saber mais entre ou Ainda não tem cadastro ? Cadastre-se aqui</p>
-                    <a class="btn btn-primary" href="http://192.168.0.111/sistema/tela-login.php">Para entrar</a>
+                    <a class="btn btn-primary btn-lg" href="http://192.168.0.111/sistema/tela-login.php">Para entrar</a>
                 </div>
             </section>
         </div>
+
     </div>
+
     <div class="row g-5">
         <div class="col-md-8">
             <article class="blog-post">
-                <h2 class="blog-post-title mb-1">Sample blog post</h2>
-                <p class="blog-post-meta">January 1, 2021 by <a href="#">Mark</a></p>
+                <h2 class="blog-post-title mb-1">Recrutamento Online</h2>
+                <p> Algumas Informações sobre 
+
+                </p>
 
                 <p>This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, lists, tables, images, code, and more are all supported as expected.</p>
                 <hr>

@@ -19,34 +19,37 @@ include('../bd/conexao.php')
 <body>
     <?php include('../menu.php'); ?>
 
-    <div class="center pt-5">
-        <h2>comentários</h2>
+    <div class="bg">
+        <div class="center blur">
 
-        <form method="POST" action="">
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Nome:</label>
-                <input type="text" name="nome" class="form-control" id="exampleFormControlInput1" placeholder="Digite seu Nome">
-            </div>
+            <h2 style="color: #000;">comentários</h2>
 
-            <div class="form-group">
-                <label for="mensagem">Mensagem:</label>
-                <textarea name="msg" class="form-control" id="mensagem" rows="3"></textarea>
-            </div>
-            <div class="form-group">
-                <input class="btn btn-success" type="submit" value="Enviar Mensagem" id="enviar">
-            </div>
-        </form>
-        <br><br>
+            <form method="POST" action="">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Nome:</label>
+                    <input type="text" name="nome" class="form-control" id="exampleFormControlInput1" placeholder="Digite seu Nome">
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea name="msg" class="form-control" id="mensagem" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-success" type="submit" value="Enviar Mensagem" id="enviar">
+                </div>
+            </form>
+            <br><br>
+        </div>
 
 
         <?php
-        $cont = "select count(\*) from mensagens;";
+        $cont = "select count(*) from mensagens;";
 
 
         $sql = "SELECT * FROM mensagens ORDER BY data_msg DESC";
         $result = mysqli_query($conexao, $sql);
 
-        if ($cont->rowCount() > 0) {
+        if ($cont > 0) {
             while ($i = mysqli_fetch_assoc($result)) {
                 echo '
                 <div class="card border-success mb-3" style="max-width: 18rem;">

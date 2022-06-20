@@ -1,5 +1,5 @@
 <?php
-define('HOST', '127.0.0.1');
+define('HOST', 'localhost');
 define('USUARIO', 'rafaelberlato');
 define('SENHA', 'berlato_admin@1902');
 define('DB', 'sistemas');

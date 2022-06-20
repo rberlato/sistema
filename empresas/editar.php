@@ -1,20 +1,16 @@
 <?php
-
-include_once 'conexao.php';
-
+require_once '../bd/conexao.php';
+require_once('../menuBootstrap.php');
+//-------------------------------------//
 $id = $_GET['id'];
 mysqli_set_charset($conexao, "utf8");
-
 $sql = "SELECT * FROM empresas WHERE  id = '$id' LIMIT 1";
 $result = mysqli_query($conexao, $sql);
-
 while ($i = mysqli_fetch_array($result)) {
     $id =                   trim($i['id']);
-
     $nomeEmpresa =          trim($i['nomeEmpresa']);
     $cnpj =                 trim($i['cnpj']);
     $inscEst =              trim($i['inscEst']);
-    
     $cep =                  trim($i['cep']);
     $rua =                  trim($i['rua']);
     $numero =               trim($i['numero']);
@@ -22,15 +18,14 @@ while ($i = mysqli_fetch_array($result)) {
     $bairro =               trim($i['bairro']);
     $cidade =               trim($i['cidade']);
     $estado =               trim($i['estado']); 
-    
     $emailComercial =       trim($i['emailComercial']);
-    $telefoneComercial =    trim($i['telComercial']);
-    $celularComercial =     trim($i['celComercial']);
-    
+    $telComercial =         trim($i['telComercial']);
+    $celComercial =         trim($i['celComercial']);
     $responsavel =          trim($i['nomeResponsavel']);
     $rg =                   trim($i['rg']);
     $emailResp =            trim($i['emailResponsavel']);
     $celResponsavel =       trim($i['celResponsavel']);
+
 }
 ?>
 
@@ -43,17 +38,15 @@ while ($i = mysqli_fetch_array($result)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Empresas</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/cad_empresas.css">
-    <!-- <link rel="stylesheet" href="../../css/geral.css"> -->
+    <link rel="stylesheet" href="../css/menu.css">
 </head>
 
+<header class="container-fluid">
+    <?php ?>
+</header>
 
 <body>
-    <!-- Pesquisa Empresa -->
-    <?php include 'campo_pesquisa.php'; ?>
-
-    <!-- Editar Empresa -->
-    <div class="container">
+    <div class="container" style="padding-top: 8vh;">
         <div class="jumbotron">
         <h4 class="display-4" style="text-transform: uppercase; font-family: Arial;">Atualização do Cadastro de Empresas</h4>
             <p class="lead">Para realizar a atualização no cadastro da Sua empresa, Preencha diretamente os campos necessários.</p>
@@ -119,19 +112,19 @@ while ($i = mysqli_fetch_array($result)) {
                             <input type="text" id="Estado" name="estado" class="form-control" aria-describedby="Estado" placeholder="Estado"  value="<?php echo $estado ?>" >
                         </div>
                     </div>
-
+                        <!-- campos de contato  -->
                     <div class="form-row">
                         <div class="form-group col-md-8">
                             <label for="emailcomercial">Email</label>
-                            <input type="text" name="emailcomercial" class="form-control" aria-describedby="emailcomercial" placeholder="Email"  value="<?php echo $emailComercial ?>">
+                            <input type="text" name="emailComercial" class="form-control" aria-describedby="emailcomercial" placeholder="Email"  value="<?php echo $emailComercial ?>">
                         </div>
                         <div class="form-group col-md-2">
                             <label for="telcomercial">Tel</label>
-                            <input type="text" name="telcomercial" class="form-control" aria-describedby="telcomercial" placeholder="Telefone comercial"  value="<?php echo $telefoneComercial ?>">
+                            <input type="text" name="telComercial" class="form-control" aria-describedby="telcomercial" placeholder="Telefone comercial"  value="<?php echo $telComercial ?>">
                         </div>
                         <div class="form-group col-md-2">
                             <label for="celcomercial">Cel</label>
-                            <input type="text" name="celcomercial" class="form-control" aria-describedby="celcomercial" placeholder="Celular/Fax"  value="<?php echo $celularComercial ?>">
+                            <input type="text" name="celComercial" class="form-control" aria-describedby="celcomercial" placeholder="Celular/Fax"  value="<?php echo $celComercial ?>">
                         </div>                        
                     </div>
 

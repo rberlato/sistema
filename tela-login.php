@@ -23,7 +23,6 @@ session_start();
         <div class="card" id="login">
             <div class="card-body">
                 <h3 class="alert-heading text-light"><strong>Faça seu Login</strong> </h3>
-
                 <div>
                     <?php
                     if (isset($_SESSION['nao_autenticado'])) :
@@ -66,32 +65,34 @@ session_start();
 
                 </div>
 
-                <form action="login.php" method="POST">
+                <form action="login.php" method="post" id="frmLogin">
 
                     <div class="form-group">
+                        <label>Email</label>
+                        <input name="email" type="email" id="frmLogin" class="form-control" placeholder="Seu Email" autofocus="">
+                    </div>
+
+                    <!-- <div class="form-group">
                         <label>Login</label>
                         <input name="usuario" type="text" class="form-control" placeholder="Seu usuário" autofocus="" required>
-                    </div>
+                    </div> -->
 
                     <div class="form-group pb-3">
                         <label>Senha</label>
-                        <input name="senha" type="password" class="form-control" placeholder="Sua senha" required>
+                        <input name="senha" type="password" id="frmLogin" class="form-control" placeholder="Sua senha">
                     </div>
 
                     <button type="submit" class="btn btn-success btn-md btn-block" id="entrarSistema">Entrar</button><br>
 
                 </form>
-
-                <?php require 'cadastro.php' ?>
+                <strong>
+                    <h3>Ainda não é cadastrado ? </h3>
+                    <h6> Não fique de fora dessa, não perca essa oportunidade. </h6>
+                    <p> cadastre-se <a href="tela-cadastro.php">Aqui</a></p>
+                </strong>
             </div>
-            
         </div>
-    
     </section>
-    
-
-
-
 </body>
 
 </html>
