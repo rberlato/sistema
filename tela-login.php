@@ -18,7 +18,7 @@ session_start();
     <link rel="stylesheet" href="css/login.css" />
 </head>
 
-<body class="contianer bg">
+<body class="contianer bg-init">
     <section>
         <div class="card" id="login">
             <div class="card-body">
@@ -82,13 +82,16 @@ session_start();
                         <input name="senha" type="password" id="frmLogin" class="form-control" placeholder="Sua senha">
                     </div>
 
-                    <button type="submit" class="btn btn-success btn-md btn-block" id="entrarSistema">Entrar</button><br>
+                    <button type="submit" class="btn btn-success btn-sm btn-block" id="entrarSistema">Entrar</button>
+
 
                 </form>
+
+
                 <strong>
-                    <h3>Ainda não é cadastrado ? </h3>
+                    <h3 class="pt-5 text-white">Ainda não é cadastrado ? </h3>
                     <h6> Não fique de fora dessa, não perca essa oportunidade. </h6>
-                    <p> cadastre-se <a href="tela-cadastro.php">Aqui</a></p>
+                    <strong> cadastre-se <a class="text-danger" href="tela-Cadastro.php">Aqui</a></strong>
                 </strong>
             </div>
         </div>

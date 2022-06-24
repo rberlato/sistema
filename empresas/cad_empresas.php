@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../bd/conexao.php';
 include '../menuBootstrap.php';
 ?>
@@ -14,9 +15,9 @@ include '../menuBootstrap.php';
 </head>
 
 <body>
-<div class="container text-center" style="padding-top: 8vh;">
+    <div class="container text-center" style="padding-top: 8vh;">
         <div class="jumbotron">
-        <h4 class="display-4" style="text-transform: uppercase; font-family: Arial;">Cadastro de Empresas</h4>
+            <h4 class="display-4" style="text-transform: uppercase; font-family: Arial;">Cadastro de Empresas</h4>
             <p class="lead">Para realizar o cadastro da Sua empresa, tenha em mãos os dados necessários.</p>
         </div>
     </div>
@@ -25,7 +26,7 @@ include '../menuBootstrap.php';
         <form method="post" name="empresa" action="cadastrar.php">
 
             <div class="jumbotron ">
-            <div class="pt-5">
+                <div class="pt-5">
                     <h5 style="text-transform: uppercase; font-family: Arial;">Dados para Cadastro:</h5>
 
                     <div class="form-row">
@@ -88,10 +89,11 @@ include '../menuBootstrap.php';
                         <div class="form-group col-md-2">
                             <label for="celcomercial">Cel</label>
                             <input type="text" name="celComercial" class="form-control" aria-describedby="celcomercial" placeholder="Celular/Fax" required>
-                        </div>                        
+                        </div>
                     </div>
 
-                    <hr><h5 class="pb-5" style="text-transform: uppercase; font-family: Arial;">Contatos do Profissional Responsavel</h5>
+                    <hr>
+                    <h5 class="pb-5" style="text-transform: uppercase; font-family: Arial;">Contatos do Profissional Responsavel</h5>
 
                     <div class="form-row">
                         <div class="form-group col-md-4">
@@ -118,12 +120,13 @@ include '../menuBootstrap.php';
                         </div>
                     </div>
 
-                    <script src="../js/jquery.js"></script>
-                    <script src="../js/cep.js"></script>
                 </div>
             </div>
         </form>
     </div>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/cep.js"></script>
 </body>
 
 </html>

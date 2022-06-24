@@ -1,8 +1,8 @@
 <?php
-include_once '../bd/conexao.php';
-include_once('../menuBootstrap.php');
-
-
+session_start();
+require_once '../bd/conexao.php';
+require_once('../menuBootstrap.php');
+//-------------------------------------//
 $id = $_GET['id'];
 mysqli_set_charset($conexao, "utf8");
 
@@ -10,12 +10,11 @@ $sql = "SELECT * FROM vagas WHERE  id = '$id' LIMIT 1";
 $result = mysqli_query($conexao, $sql);
 
 while ($i = mysqli_fetch_array($result)) {
-    $id =           trim($i['id']);
-
-    $titulo =       trim($i['titulo']);
-    $criador =      trim($i['criador']);
-    $empresa =      trim($i['empresa']);
-    $descricao =    trim($i['descricao']);
+    $id =        trim($i['id']);
+    $titulo =    trim($i['titulo']);
+    $criador =   trim($i['criador']);
+    $empresa =   trim($i['empresa']);
+    $descricao = trim($i['descricao']);
 }
 ?>
 
@@ -28,27 +27,33 @@ while ($i = mysqli_fetch_array($result)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Empresas</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/geral.css">
 </head>
 
-
-<body class="bg bg-dark">
-    <div class="container text-center" style="padding-top: 8vh;">
-        <div class="jumbotron ">
-            <h4 class="display-4" style="text-transform: uppercase; font-family: Arial;">Edição das vagas</h4>
-            <h5 class="text-muted">Tenha em mãos os dados necessários.</h5>
+<body>
+    <div class="container" style="padding-top: 8vh;">
+        <div class="jumbotron">
+            <h4 class="display-4" style="text-transform: uppercase; font-family: Arial;">Atualização de Vagas</h4>
+            <p class="lead">Tenha em mãos os dados necessários.</p>
         </div>
     </div>
 
+    <!-- Envia para Edição -->
     <div class="container">
-        <form method="post" name="titulo" action="atualizar.php">
+        <form method="post" action="atualizar.php">
             <div class="jumbotron ">
-                <div>
+                <div class="pt-5">
                     <h5 style="text-transform: uppercase; font-family: Arial;">Dados para Cadastro:</h5>
 
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="titulo">Titulo da Vaga</label>
                             <input type="text" name="titulo" class="form-control" id="titulo" aria-describedby="titulo" placeholder="Titulo da Vaga" required value="<?php echo $titulo ?>">
+                        </div>
+
+                        <div class="form-group col-md-12">
+                            <label for="id"></label>
+                            <input type="hidden" name="id" class="form-control" id="id" aria-describedby="id" placeholder="id" value="<?php echo $id ?>">
                         </div>
 
                         <div class="form-group col-md-6">
@@ -62,32 +67,26 @@ while ($i = mysqli_fetch_array($result)) {
 
                         <div class="form-group col-md-12">
                             <label for="descricao">Descrição da Vaga:</label>
-                            <textarea class="form-control" name="descricao" id="descricao" rows="5"><?php echo $descricao ?></textarea>
-                        </div>
+                            <textarea class="form-control" name="descricao" id="descricao" rows="8"><?php echo $descricao ?></textarea>
+                            <!-- <input type="text" name="descricao" class="form-control" id="descricao" aria-describedby="descricao" placeholder="descricao" required value=""> -->
 
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="ativa">
-                            <label class="form-check-label pr-3" for="ativa">Ativa</label>
-                        </div>
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="pausada" checked>
-                            <label class="form-check-label" for="pausada">Pausada</label>
+                            <!-- <textarea class="form-control" name="descricao" id="descricao" rows="5"><?php echo $descricao ?></textarea > -->
                         </div>
 
                         <div class="form-group col-md-12 pt-5">
-                            <button type="submit" name="salvar" value="cadastrar" class="btn btn-primary">Atualizar Vaga</button>
+                            <button type="submit" class="btn btn-primary">Gravar Novos Dados da Vaga</button>
                         </div>
 
 
 
-                        <script src="../js/jquery.js"></script>
                     </div>
                 </div>
         </form>
     </div>
-
-
+    
+    
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/jquery.js"></script>
 
 </body>
 

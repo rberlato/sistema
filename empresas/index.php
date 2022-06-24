@@ -21,7 +21,7 @@ $result = mysqli_query($conexao, $consulta_empresas);
 </head>
 
 <body>
-    <div class="container text-center" style="padding-top: 8vh;">
+    <div class="container text-center" style="padding-top: 5vh;">
         <div>
             <h1>Empresas Cadastradas
                 <a class="btn btn-success btn-sm" href="cad_empresas.php">Nova Empresa</a>
@@ -57,7 +57,7 @@ $result = mysqli_query($conexao, $consulta_empresas);
                                 <th>' . $i['telComercial'] . '</th>
                                 <th>' . $i['celComercial'] . '</th>
                                 <th>' . $i['celResponsavel'] . '</th>
-                                <th><a class="btn btn-warning btn-sm" href="editar.php?id=' . $i['id'] . '">Editar</a>
+                                <th><a class="btn btn-warning btn-sm" href="editar.php?id=' . $i['id'] . '">Atualizar </a>
                                 <a class="btn btn-danger btn-sm" href="excluir.php?id=' . $i['id'] . '" onclick="return deletar();">Excluir</a>    
                             </th>
                         </tr>
@@ -76,7 +76,7 @@ $result = mysqli_query($conexao, $consulta_empresas);
                             <th>' . $i['telComercial'] . '</th>
                             <th>' . $i['celComercial'] . '</th>
                             <th>' . $i['celResponsavel'] . '</th>
-                            <th><a class="btn btn-warning btn-sm" href="editar.php?id=' . $i['id'] . '">Editar</a>                               
+                            <th><a class="btn btn-warning btn-sm" href="editar.php?id=' . $i['id'] . '">Atualizar</a>                               
                         </th>
                     </tr>
                     </tbody>';
@@ -87,7 +87,8 @@ $result = mysqli_query($conexao, $consulta_empresas);
     </div>
 </body>
 
-<script src="../js/menu.js"></script>
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
+<script src="../js/jquery.js"></script>
 <script>
     function deletar() {
         if (confirm("Deseja Deletar esse Registro ?"))

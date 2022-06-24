@@ -1,61 +1,29 @@
-<?php
-$PHP_SELF = "";
-//Diretório aonde ficará os arquivos
-$dir = "image/users/profile_photo/";
+<!DOCTYPE html>
+<html lang="en">
 
-//Extensões permitidas
-$ext = array("gif", "jpg", "png");
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
 
-//Quant. de campos do tipo FILE
-$campos = 6;
-
-//Formulário
-echo '<form method="post" action="' . $PHP_SELF . '" enctype="multipart/form-data">
-      <input type="file" name="file[]">
-        <br />
-        <br />
-        <br />
-     <input type="submit" name="submit" value=" OK ">
-     </form>';
-
-
-//Se for enviado
-if (isset($_POST['submit'])) {
-
-    //Obtendo info. dos arquivos
-    $f_name = $_FILES['file']['name'];
-    $f_tmp = $_FILES['file']['tmp_name'];
-    $f_type = $_FILES['file']['type'];
-
-
-    //Contar arquivos enviados
-    $cont = 0;
-
-    //Repetindo de acordo com a quantidade de campos FILE
-    for ($i = 0; $i < $campos; $i++) {
-
-        //Pegando o nome
-        $name = $f_name[$i];
-
-        //Verificando se o campo contem arquivo
-        if (($name != "") and (is_file($f_tmp[$i])) and (in_array(substr($name, -3), $ext))) {
-            if ($cont == 0) {
-                echo "<b>Arquivo(s) enviados: </b>";
-            }
-            echo $name . " - ";
-            //Movendo arquivo's do upload
-            $up = move_uploaded_file($f_tmp[$i], $dir . $name);
-            //Status
-            if ($up == true) :
-                echo  "<i>Enviado!</i>";
-                $cont++;
-            else :
-                echo "<i>Falhou!</i>";
-            endif;
-            echo "
-    ";
-        }
+<body>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="conteudo">Enviar imagem:</label>
+        <input type="file" name="pic" accept="image/*">
+        <button type="submit">Enviar imagem</button>
+    </form>
+    <?php
+    if (isset($_FILES['pic'])) {
+        $ext = strtolower(substr($_FILES['pic']['name'], -4)); //Pegando extensão do arquivo
+        $new_name = date("Y.m.d-H.i.s") . $ext; //Definindo um novo nome para o arquivo
+        $dir = './image/'; //Diretório para uploads 
+        move_uploaded_file($_FILES['pic']['tmp_name'], $dir . $new_name); //Fazer upload do arquivo
+        echo ("Imagen enviada com sucesso!");
     }
+    ?>
 
-    echo ($cont != 0) ? "<i>Total de arquivos enviados: </i>" . $cont : "Nenhum arquivo foi enviado!";
-}
+</body>
+
+</html>

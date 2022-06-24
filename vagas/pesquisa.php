@@ -12,31 +12,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Empresas</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/geral.css">
-    <link rel="stylesheet" href="../css/menu.css">
 </head>
 
 
 <body>
 
-    <div class="center jumbotron ">
+    <div class="container">
         <?php
         require_once 'conexao.php';
 
         $pesquisar = $_GET['busca'];
-        $sql = "SELECT * FROM vagas where titulo or descricao like '%$pesquisar%'  ";
+        $sql = "SELECT * FROM empresas where nomeResponsavel or nomeEmpresa like '%$pesquisar%'  ";
         $row = mysqli_query($conexao, $sql);
 
         while ($result = mysqli_fetch_assoc($row)) {
-            echo '<strong>Vaga: </strong>'. $resulPesquisa = $result['titulo'];
-            echo ' <strong>Responsavel: </strong>  ' . $resulPesquisa = $result['descricao'];
+            echo '<strong>Empresa: </strong>'. $resulPesquisa = $result['nomeEmpresa'];
+            echo ' <strong>Responsavel: </strong>  ' . $resulPesquisa = $result['nomeResponsavel'];
             echo '
-            <div class="container">
-            <a class="btn btn-success" href="cadastrarVagas.php?id=' . $result['id'] . '">Cadastrar Novo</a>
+            <div class="container jumbotron">
+            <a class="btn btn-success" href="cad_empresas.php?id=' . $result['id'] . '">Cadastrar Novo</a>
                 <a class="btn btn-danger" href="excluir.php?id=' . $result['id'] . '">Excluir</a>  
                 <a class="btn btn-warning" href="editar.php?id=' . $result['id'] . '">Editar</a>
-                <a class="btn btn-light" href="http://192.168.0.111/sistema/vagas/">Voltar</a>
-            </div>';
+                <a class="btn btn-light" href="http://192.168.0.111/sistema/cadastro/empresas/cad_empresas.php">Voltar</a>
+            </div><hr>';
         }
         ?>
     </div>

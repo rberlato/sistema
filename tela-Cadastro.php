@@ -13,16 +13,16 @@ session_start();
     <title>Sistema de Login - Rafael Berlato </title>
 
 
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/geral.css" />
     <link rel="stylesheet" href="css/login.css" />
 </head>
 
-<body class="contianer bg">
+<body class="contianer bg-init">
     <section>
         <div class="card" id="login">
             <div class="card-body">
-                <h3 class="alert-heading text-light"><strong>Faça seu Login</strong> </h3>
+                <h3 class="alert-heading text-light"><strong>Insira seus Dados aqui</strong> </h3>
                 <div>
                     <?php
                     if (isset($_SESSION['nao_autenticado'])) :
@@ -96,20 +96,25 @@ session_start();
                                 <input name="nome" type="text" class="form-control" placeholder="Informe seu Nome" autofocus required>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group pt-3">
                                 <input name="email" class="form-control" type="email" placeholder="Informe seu email" required>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group pt-3">
                                 <input name="usuario" type="text" class="form-control" placeholder="Informe seu Usuário" required>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group pt-3">
                                 <input name="senha" class="form-control" type="password" placeholder="Informe sua Senha" minlength="1" required>
                             </div>
                             <hr>
 
-                            <button type="submit" class="btn btn-warning btn-md btn-block">Cadastrar</button>
+                            <button type="submit" class="btn btn-warning btn-sm btn-block">Cadastrar</button>
+                            <div class="form-group pt-3">
+                                <p>Jatem Cadastro?</p>
+                                <strong><a class="btn btn-warning btn-sm" href="tela-login.php">Entrar</a></strong>
+                            </div>
+
 
                         </form>
                     </div>

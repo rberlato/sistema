@@ -2,8 +2,6 @@
 session_start();
 
 include_once('../bd/conexao.php');
-include_once('verifica_login.php');
-
 include_once('../menuBootstrap.php');
 
 // Realiza a consulta das vagas
@@ -18,21 +16,21 @@ $result = mysqli_query($conexao, $consulta_vagas);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Login</title>
+    <title>Sistema de Login - Rafael Berlato </title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 
 <body>
-    <div class="container text-center" style="padding-top: 8vh;">
+    <div class="container text-center" style="padding-top: 5vh;">
         <div>
-            <h1>Vagas Cadastradas
-                <a class="btn btn-success btn-sm" href="cadastrarVagas.php">Nova Vaga</a>
-            </h1>
+            <h1>Vagas Cadastradas    <a class="btn btn-success btn-sm" href="cadastrarVagas.php">Nova Vaga</a></h1>
+            
+
         </div>
     </div>
 
     <div class="">
-        <table class="table container-fluid text-center">
+    <table class="table container-fluid text-center">
             <thead class="table-dark ">
                 <tr class="table-striped">
                     <th scope="col">Codigo</th>
@@ -54,14 +52,14 @@ $result = mysqli_query($conexao, $consulta_vagas);
                     echo '
                     <tbody class="text-center">
                         <tr class="table-hover">
-                            <th scope="row"> ' . $i['id'] . ' </th>
+                            <th> ' . $i['id'] . ' </th>
                             <th> ' . $i['titulo'] . ' </th>
                             <th> ' . $i['criador'] . ' </th>
                             <th> ' . $i['descricao'] . ' </th>
                             <th> ' . $i['empresa'] . ' </th>
                             <th> ' . $i['dataCadastro'] . ' </th>
                             <th> ' . $i['statusVaga'] . ' </th>
-                            <th><a class="btn btn-warning btn-sm" href="editar.php?id=' . $i['id'] . '">Editar</a>
+                            <th><a class="btn btn-warning btn-sm" href="editar.php?id=' . $i['id'] . '">Atualizar</a>
                             <a class="btn btn-danger btn-sm" href="excluir.php?id=' . $i['id'] . '" onclick="return deletar();">Excluir</a>
                             </th>
                         </tr>
@@ -74,14 +72,14 @@ $result = mysqli_query($conexao, $consulta_vagas);
                     echo '
                     <tbody class="text-center">
                         <tr>
-                            <th scope="row"> ' . $i['id'] . ' </th>
+                            <th> ' . $i['id'] . ' </th>
                             <th> ' . $i['titulo'] . ' </th>
                             <th> ' . $i['criador'] . ' </th>
                             <th> ' . $i['descricao'] . ' </th>
                             <th> ' . $i['empresa'] . ' </th>
                             <th> ' . $i['dataCadastro'] . ' </th>
                             <th> ' . $i['statusVaga'] . ' </th>
-                            <th><a class="btn btn-warning btn-sm" href="editar.php?id=' . $i['id'] . '">Editar</a>
+                            <th><a class="btn btn-warning btn-sm" href="editar.php?id=' . $i['id'] . '">Atualizar</a>
                             </th>
                         </tr>
                     </tbody>';
@@ -92,7 +90,8 @@ $result = mysqli_query($conexao, $consulta_vagas);
     </div>
 </body>
 
-<script src="../js/menu.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
 <script>
     function deletar() {
         if (confirm("Deseja Deletar esse Registro ?"))

@@ -1,5 +1,5 @@
 <?php
-require_once 'conexao.php';
+require_once '../bd/conexao.php';
 //-------------------------------------//
 $id =           trim($_POST['id']);
 $titulo =       trim($_POST['titulo']);

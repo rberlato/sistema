@@ -1,6 +1,6 @@
 <?php
-require_once 'conexao.php';
 session_start();
+require_once 'conexao.php';
 ?>
 
 <!DOCTYPE html>

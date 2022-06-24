@@ -8,32 +8,30 @@
     background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(3px);
     box-shadow: 0 20px 20px rgba(0, 1, 2, 3, .8);
-    height: 100vh;
 }
 
 .center {
     width: 999px;
     display: flex;
-    
+
     margin-left: auto;
     margin-right: auto;
 }
 
-.nameSession{
+.nameSession {
     color: #fff;
     background-color: rgba(37, 35, 35, 0.3);
     backdrop-filter: blur(3px);
     border-radius: 5px;
-    
+
 
 }
 
-.bgcard{
-    background: url('../image/work_two.jpeg')no-repeat center center;
-    background-size: cover;
-    height: 100vh
+.bgcard {
+    display: block;
+    justify-content: center;
+    align-items: center;
 }
-
 
 
 .container {
@@ -68,4 +66,30 @@
     width: 250px;
     height: auto;
     padding: 10px;
+}
+
+.containerclick {
+    padding: 40px;
+    background: #f6f5ff;
+
+}
+
+.blog-post-title {
+    padding: 150px;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cabecalho {
+    padding: 25px;
+    padding-top: 25px;
+
+
+}
+
+.table {
+    padding: 75px;
+
 }
